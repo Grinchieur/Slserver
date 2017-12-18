@@ -10,6 +10,8 @@ public class PlayerActionSer{
 	private float posYPlayer = 300;
 	private int direction = 2;
 	private boolean onStair = false;
+	private boolean attk = false;
+	
 	private boolean moving = false;
 	Connection c;
 	public PlayerActionSer(AddPlayer newPlayer){
@@ -17,7 +19,6 @@ public class PlayerActionSer{
 		posXPlayer = newPlayer.getX();
 		posYPlayer = newPlayer.getY();
 	}
-	
 	public PlayerActionSer(){
 		
 	}
@@ -60,6 +61,12 @@ public class PlayerActionSer{
 	public void setId(int id) {
 		this.id = id;
 	}
+	public boolean isAttk() {
+		return attk;
+	}
+	public void setAttk(boolean attk) {
+		this.attk = attk;
+	}
 	public void printPlayerServ() {
 		 System.out.println("id = " + this.getId() );
          System.out.println("x = " + this.getPosXPlayer() );
@@ -75,6 +82,7 @@ public class PlayerActionSer{
 		this.setPosYPlayer(temp.getPosYPlayer());
 		this.setDirection(temp.getDirection());
 		this.setMoving(temp.isMoving());
+		this.setAttk(temp.isAttk());
 		
 	}
 }
